@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+ 
+kind: Certificate
+metadata:
+  name: copetesting-com-tls
+spec:
+  secretName: copetesting-com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: copetesting.com
+  dnsNames:
+    - copetesting.com
+    - www.copetesting.com
